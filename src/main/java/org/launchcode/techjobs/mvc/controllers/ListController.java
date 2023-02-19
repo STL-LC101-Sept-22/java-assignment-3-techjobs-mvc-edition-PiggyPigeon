@@ -29,8 +29,10 @@ public class ListController {
         columnChoices.put("positionType", "Position Type");
         columnChoices.put("coreCompetency", "Skill");
 
+//        TODO #5 the line below causes the formatting error, try to fix.
         //adding the line below correctly adds a link to all 98 jobs BUT
         //it also made a weird formatting problem
+        //another way to do it is in list.html line 23 :
         tableChoices.put("all", "View All");
         tableChoices.put("employer", JobData.getAllEmployers());
         tableChoices.put("location", JobData.getAllLocations());
@@ -46,6 +48,8 @@ public class ListController {
         model.addAttribute("locations", JobData.getAllLocations());
         model.addAttribute("positions", JobData.getAllPositionTypes());
         model.addAttribute("skills", JobData.getAllCoreCompetency());
+        //added below line as weird stab in the dark, it did nothing
+//        model.addAttribute("all", JobData.findAll());
 
         return "list";
     }
